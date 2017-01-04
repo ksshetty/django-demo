@@ -17,7 +17,7 @@ target
 
 # Intellij
 .idea/uiDesigner.xml
-.idea/
+**/.idea/*
 **/.idea/*.xml
 *.iml
 *.iws
