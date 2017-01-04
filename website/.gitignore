@@ -1,0 +1,24 @@
+*.pyc
+*.egg-info
+
+*.log
+
+.project
+.pydevproject
+.settings
+.idea
+.coverage
+
+.DS_Store
+
+build
+dist
+target
+
+# Intellij
+.idea/uiDesigner.xml
+.idea/
+**/.idea/*.xml
+*.iml
+*.iws
+
