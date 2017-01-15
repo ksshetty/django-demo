@@ -1,9 +1,9 @@
-from __future__ import unicode_literals
-
+from django.contrib.auth.models import User
 from django.db import models
 
 
 class Listing(models.Model):
+    user = models.ForeignKey(User, default=1)
     property_type = models.CharField(max_length=100)
     property_size = models.IntegerField()
     year_built = models.DateField()
