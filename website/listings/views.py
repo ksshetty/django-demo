@@ -1,4 +1,14 @@
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
+
+from .models import Listing
+
+
 from django.shortcuts import render
+from .forms import UserForm
 
 
 def index(request):
@@ -16,7 +26,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                albums = Album.objects.filter(user=request.user)
+                albums = Listing.objects.filter(user=request.user)
                 return render(request, 'listings/index.html', {'albums': albums})
             else:
                 return render(request, 'listings/login.html', {'error_message': 'Your account has been disabled'})
@@ -37,7 +47,7 @@ def register(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                albums = Album.objects.filter(user=request.user)
+                albums = Listing.objects.filter(user=request.user)
                 return render(request, 'listings/index.html', {'albums': albums})
     context = {
         "form": form,
