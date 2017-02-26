@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'listings.apps.ListingsConfig',
     'storages',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
