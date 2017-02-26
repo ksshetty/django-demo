@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'storages',
     'rest_framework_swagger',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
