@@ -25,7 +25,7 @@ SECRET_KEY = 'g^ic@=ii08pq-g1ouh#*r=ic&ztb#m%60!4zdk9pyk2dvql_q%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.213.234.245']
+ALLOWED_HOSTS = ['54.213.234.245', '127.0.0.1']
 
 
 # Application definition
@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'storages',
     'rest_framework_swagger',
     'rest_framework',
+    'customer',
+    'vendor',
+    'work_request',
 ]
 
 MIDDLEWARE = [
@@ -89,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'mydb',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'myuser',
+        'USER': 'postgres',
         'PASSWORD': 'admin123',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
@@ -199,5 +202,9 @@ REST_FRAMEWORK = {
 
     # Pagination
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 25
+    'PAGE_SIZE': 25,
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
