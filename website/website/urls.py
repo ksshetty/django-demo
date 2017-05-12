@@ -47,5 +47,6 @@ urlpatterns = [
     url(r'^api/customer/', include('customer.urls')),
     url(r'^api/vendor/', include('vendor.urls')),
     url(r'^api/work_request/', include('work_request.urls')),
+    url(r'^api/listing/', include('listing.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
