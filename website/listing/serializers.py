@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from listing.models import ResidentialListing
+from listing.models import Listing
 
 
-class ResidentialSerializer(serializers.HyperlinkedModelSerializer):
+class ListingSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = ResidentialListing
+        model = Listing
         fields = '__all__'

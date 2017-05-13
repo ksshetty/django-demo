@@ -5,7 +5,7 @@ from listing import views_api
 
 router = DefaultRouter()
 
-router.register(r'listing', views_api.ResidentialListingViewSet)
+router.register(r'listing', views_api.ListingViewSet)
 
 urlpatterns = [
     url(r'^v0.1/', include(router.urls)),

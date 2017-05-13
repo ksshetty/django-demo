@@ -40,8 +40,6 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^listings/', include('listings.urls')),
-    # url(r'^', include('listings.urls')),
     url(r'^api/docs?/', docs_view),
     url(r'^', include(router.urls)),
     url(r'^api/customer/', include('customer.urls')),

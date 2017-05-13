@@ -1,10 +1,10 @@
 from rest_framework import viewsets
 
-from listing.models import ResidentialListing
-from listing.serializers import ResidentialSerializer
+from listing.models import Listing
+from listing.serializers import ListingSerializer
 
 
-class ResidentialListingViewSet(viewsets.ModelViewSet):
-    queryset = ResidentialListing.objects.all()
-    serializer_class = ResidentialSerializer
+class ListingViewSet(viewsets.ModelViewSet):
+    queryset = Listing.objects.all()
+    serializer_class = ListingSerializer
     logging_methods = ['POST', 'PUT', 'PATCH', 'DELETE']
